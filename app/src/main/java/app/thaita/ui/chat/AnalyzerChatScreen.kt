@@ -13,6 +13,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Send
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -74,19 +77,19 @@ fun AnalyzerChatScreen(
 
             // Greeting with typewriter effect
             if (state.greetingSegments.isNotEmpty()) {
-                val annotatedText = androidx.compose.ui.text.buildAnnotatedString {
+                val annotatedText = buildAnnotatedString {
                     state.greetingSegments.forEach { segment ->
                         val style = when {
-                            segment.isGradient -> androidx.compose.ui.text.SpanStyle(
+                            segment.isGradient -> SpanStyle(
                                 brush = Brush.linearGradient(listOf(GradientStart, GradientEnd)),
                                 fontWeight = FontWeight.Bold,
                             )
                             segment.formatting == app.thaita.domain.model.TextFormatting.GREEN_BOLD ->
-                                androidx.compose.ui.text.SpanStyle(
+                                SpanStyle(
                                     color = thaitaColors.green,
                                     fontWeight = FontWeight.Bold,
                                 )
-                            else -> androidx.compose.ui.text.SpanStyle(
+                            else -> SpanStyle(
                                 color = thaitaColors.textPrimary,
                             )
                         }

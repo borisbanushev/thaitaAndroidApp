@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Simple "t" letter for thaita -->
+    <path
+        android:fillColor="#F0615D"
+        android:pathData="M42,30 L66,30 L66,36 L57,36 L57,78 L51,78 L51,36 L42,36 Z"/>
+</vector>
